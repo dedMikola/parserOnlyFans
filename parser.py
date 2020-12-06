@@ -3,7 +3,15 @@ from bs4 import BeautifulSoup
 import requests
 
 
-# set browser settings
+PROXY = "<HOST:PORT>"
+webdriver.DesiredCapabilities.FIREFOX['proxy'] = {
+    "httpProxy": PROXY,
+    "ftpProxy": PROXY,
+    "sslProxy": PROXY,
+    "proxyType": "MANUAL",
+}
+
+
 option = webdriver.FirefoxOptions()
 option.set_preference('dom.webdriver.enabled', False)
 option.set_preference('dom.webnotifications.enabled', False)
