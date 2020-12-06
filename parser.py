@@ -6,6 +6,10 @@ import requests
 # set browser settings
 option = webdriver.FirefoxOptions()
 option.set_preference('dom.webdriver.enabled', False)
+option.set_preference('dom.webnotifications.enabled', False)
+option.set_preference('media.volume_scale', '0.0')
+option.headless = True
+option.set_preference('network.cookie.maxNumber', '2')
 option.set_preference('general.useragent.override',
                           'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 '
                           '(KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36')
